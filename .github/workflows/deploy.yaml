@@ -1,6 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 name: deploy
 
+permissions:
+  contents: write
+
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -34,8 +37,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
-        permissions:
-          contents: write
         with:
           # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Settings > Secret 建立的 ACCESS_TOKEN，推同個 repo 的話可以不需要
           branch: gh-pages # deploy 到 gh-pages 這個分支
